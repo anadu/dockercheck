@@ -4,6 +4,6 @@ resource "docker_container" "kishore" {
 
   ports {
     internal = "80"
-    external = "9000"
+    external = "9001"
   }
 }
