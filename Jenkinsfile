@@ -89,10 +89,5 @@ pipeline {
                 sh "pwd; terraform apply -input=false tfplan"
             }
         }    
-        post {
-            always {
-                cleanWs()
-            }
-        }
     }
 }
