@@ -40,6 +40,10 @@ pipeline {
             steps {
                 sh "pwd; terraform apply -input=false tfplan"
             }
+        }    
+        post {
+            always {
+                 cleanWs()
         }
     }
 }
