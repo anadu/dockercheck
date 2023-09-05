@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-              git branch: 'main',  url: 'https://github.com/anadu/dockercheck.git'
+                
+                git branch: 'main',  url: 'https://github.com/anadu/dockercheck.git'
            }
         }   
         
