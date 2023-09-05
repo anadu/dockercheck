@@ -4,6 +4,6 @@ resource "null_resource" "push_to_registry" {
   }
 
   provisioner "local-exec" {
-    command = "docker push 000100000/dockercheck:latest" # Replace with your registry URL and image name
+    command = "docker push 000100000/dockercheck:1" # Replace with your registry URL and image name
   }
 }
