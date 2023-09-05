@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    cleanWs()
     parameters {
         //string(name: 'environment', defaultValue: 'terraform', description: 'Workspace/environment file to use for deployment')
         booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
@@ -11,13 +12,7 @@ pipeline {
     }
 
     stages {
-        stage('checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/anadu/dockercheck.git'
-            }
-        }
-
-        stage('Plan') {
+        stage('init-panPlan') {
             steps {
                 sh 'pwd; terraform init -input=false'
                 //sh 'pwd; terraform workspace new ${environment}'
